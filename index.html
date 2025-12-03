@@ -75,7 +75,7 @@
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script src="assets/js/main.js"></script>
 
-<!-- Gate script -->
+<!-- Fixed Gate Script -->
 <script>
   const overlay = document.getElementById('gateOverlay');
   const mainSite = document.getElementById('mainSite');
@@ -83,7 +83,6 @@
   const btn = document.getElementById('unlockBtn');
   const wrong = document.getElementById('wrongPass');
 
-  // password you hand out
   const PASS = 'build2025';
 
   btn.addEventListener('click', unlock);
@@ -93,14 +92,15 @@
     if (input.value.trim() === PASS) {
       overlay.style.display = 'none';
       mainSite.style.display = 'block';
-      localStorage.setItem('so-gate', 'open'); // remember choice
+      localStorage.setItem('so-gate', 'open');
     } else {
       wrong.style.display = 'block';
       input.focus();
     }
   }
 
-  // auto-unlock if already entered this session
+  // auto-unlock if already entered + focus cursor
+  input.focus();
   if (localStorage.getItem('so-gate') === 'open') {
     overlay.style.display = 'none';
     mainSite.style.display = 'block';
