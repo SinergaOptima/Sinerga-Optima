@@ -1,48 +1,34 @@
 ---
 layout: default
 title: "Building the Base"
-description: "Post-capitalist upgrade path – public tech guilds, worker co-ops, carbon caps."
+description: "Laying the foundations of a post-capitalist upgrade – public tech guilds, worker co-ops, carbon caps."
 ---
 
-<!--  original visual block, now inside Jekyll -->
+<!-- scoped hero block -->
 <section id="hero">
   <div class="hero-content">
     <ion-icon name="leaf-outline" class="hero-icon"></ion-icon>
     <h1>Sinerga-Optima</h1>
     <p>We’re laying the foundations of a post-capitalist upgrade:<br>
        public tech guilds, worker co-ops, carbon-negative growth.</p>
-    <strong>Site under construction – check back soon.</strong>
+    <strong>Site under construction – more pages launching soon.</strong>
 
     <div class="social">
       <a href="https://github.com/sinergaoptima" target="_blank" rel="noopener" class="btn">
         <ion-icon name="logo-github"></ion-icon> GitHub
       </a>
       <a href="mailto:hello@sinerga-optima.org" class="btn">
-        <ion-icon name="mail"></ion-icon> Contact
+        <ion-icon name="mail"></ion-icon> Email
       </a>
     </div>
   </div>
 </section>
 
-<!--  scoped styles so we don’t break the rest of the site -->
+<!-- scoped styles -->
 <style>
-#hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  background:linear-gradient(135deg,var(--dark) 60%,var(--teal) 190%);
-  padding:2rem 0;
-}
-.hero-content{
-  max-width:640px;
-}
-.hero-icon{
-  font-size:4rem;
-  color:var(--amber);
-  margin-bottom:1rem;
-}
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,var(--dark) 60%,var(--teal) 190%);padding:2rem 0}
+.hero-content{max-width:640px}
+.hero-icon{font-size:4rem;color:var(--amber);margin-bottom:1rem}
 #hero h1{margin-bottom:1rem;font-size:clamp(2.5rem,5vw,3.5rem)}
 #hero p{margin-bottom:1.5rem;font-size:1.2rem;opacity:.9}
 #hero strong{display:block;margin-bottom:2rem;font-size:1.1rem}
