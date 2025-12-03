@@ -72,74 +72,38 @@
 </div>
 
 <!-- Scripts -->
-<script>
-  const overlay   = document.getElementById('gateOverlay');
-  const mainSite  = document.getElementById('mainSite');
-  const input     = document.getElementById('passInput');
-  const btn       = document.getElementById('unlockBtn');
-  const wrong     = document.getElementById('wrongPass');
-  const PASS      = 'build2025';
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script src="assets/js/main.js"></script>
 
-  function unlock() {
-    if (input.value.trim() === PASS) {
-      overlay.style.display   = 'none';
-      mainSite.style.display  = 'block';
-      localStorage.setItem('so-gate','open');
-    } else {
-      wrong.style.display = 'block';
-      input.select();          // highlight text for quick retry
-    }
-  }
-
-  btn.addEventListener('click', unlock);
-
-  // ENTER key on the INPUT field (not document)
-  input.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.keyCode === 13) {
-      e.preventDefault(); // stop form submission if any
-      unlock();
-    }
-  });
-
-  // focus cursor + auto-unlock
-  input.focus();
-  if (localStorage.getItem('so-gate') === 'open') {
-    overlay.style.display  = 'none';
-    mainSite.style.display = 'block';
-  }
-</script>
-
-
-<!-- Fixed Gate Script -->
+<!-- Gate Script (NO localStorage – re-locks on every page load) -->
 <script>
   const overlay = document.getElementById('gateOverlay');
   const mainSite = document.getElementById('mainSite');
   const input = document.getElementById('passInput');
   const btn = document.getElementById('unlockBtn');
   const wrong = document.getElementById('wrongPass');
-
   const PASS = 'build2025';
-
-  btn.addEventListener('click', unlock);
-  input.addEventListener('keyup', e => { if (e.key === 'Enter') unlock(); });
 
   function unlock() {
     if (input.value.trim() === PASS) {
       overlay.style.display = 'none';
       mainSite.style.display = 'block';
-      localStorage.setItem('so-gate', 'open');
     } else {
       wrong.style.display = 'block';
-      input.focus();
+      input.select();
     }
   }
 
-  // auto-unlock if already entered + focus cursor
+  btn.addEventListener('click', unlock);
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.keyCode === 13) {
+      e.preventDefault();
+      unlock();
+    }
+  });
+
   input.focus();
-  if (localStorage.getItem('so-gate') === 'open') {
-    overlay.style.display = 'none';
-    mainSite.style.display = 'block';
-  }
+  //  NO localStorage – gate re-appears on every page load
 </script>
 </body>
 </html>
