@@ -8,6 +8,7 @@
   <link rel="icon" href="assets/img/favicon.png">
   <link rel="stylesheet" href="assets/css/main.css">
 
+  <!-- Gate styles -->
   <style>
     #gateOverlay{position:fixed;inset:0;background:var(--dark);z-index:9999;display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem}
     .gate-box{max-width:420px;width:100%}
@@ -70,14 +71,15 @@
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script src="assets/js/main.js"></script>
 
+<!-- Button-Only Unlock -->
 <script>
-  const pass = 'build2025';
-  const go   = () => document.getElementById('gateOverlay').style.display =
-                 document.getElementById('passInput').value.trim() === pass ? 'none' : 'block';
-
+  const go = () => {
+    if (document.getElementById('passInput').value.trim() === 'build2025') {
+      document.getElementById('gateOverlay').style.display = 'none';
+      document.getElementById('mainSite').style.display = 'block';
+    }
+  };
   document.getElementById('unlockBtn').onclick = go;
-  document.getElementById('passInput').addEventListener('keyup', e => { if (e.key === 'Enter') go(); });
-
   document.getElementById('passInput').focus();
 </script>
 </body>
