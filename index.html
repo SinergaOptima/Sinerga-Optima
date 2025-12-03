@@ -1,62 +1,50 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sinerga Optima</title>
-  <style>
-    :root{
-      --teal:#007F7F;
-      --amber:#FFB500;
-      --dark:#001219;
-    }
-    *{box-sizing:border-box;margin:0;padding:0;}
-    body{
-      height:100vh;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      background:linear-gradient(135deg,var(--dark) 60%,var(--teal) 190%);
-      color:#fff;
-      font-family:system-ui,Helvetica,Arial,sans-serif;
-      text-align:center;
-      line-height:1.5;
-    }
-    h1{font-size:clamp(2rem,5vw,3.5rem);letter-spacing:.05em;}
-    .flare{
-      width:4rem;height:.25rem;
-      background:var(--amber);
-      margin:1.2rem auto;
-      border-radius:2px;
-    }
-    p{font-size:clamp(1rem,2.5vw,1.25rem);opacity:.9;}
-    .social{
-      margin-top:2rem;
-      display:flex;gap:1.2rem;
-    }
-    .social a{
-      display:inline-block;
-      padding:.5rem 1.1rem;
-      border:1px solid var(--amber);
-      color:var(--amber);
-      text-decoration:none;
-      border-radius:4px;
-      transition:.2s;
-    }
-    .social a:hover{background:var(--amber);color:var(--dark);}
-  </style>
-</head>
-<body>
-  <h1>Sinerga-Optima</h1>
-  <div class="flare"></div>
-  <p>We’re laying the foundations of a post-capitalist upgrade:<br>
-     public tech guilds, worker co-ops, carbon-negative growth.</p>
-  <p><strong>Site under construction – check back soon.</strong></p>
+---
+layout: default
+title: "Building the Base"
+description: "Post-capitalist upgrade path – public tech guilds, worker co-ops, carbon caps."
+---
 
-  <div class="social">
-    <a href="https://github.com/sinergaoptima" target="_blank" rel="noopener">GitHub</a>
-    <a href="mailto:hello@sinerga-optima.org">Email</a>
+<!--  original visual block, now inside Jekyll -->
+<section id="hero">
+  <div class="hero-content">
+    <ion-icon name="leaf-outline" class="hero-icon"></ion-icon>
+    <h1>Sinerga-Optima</h1>
+    <p>We’re laying the foundations of a post-capitalist upgrade:<br>
+       public tech guilds, worker co-ops, carbon-negative growth.</p>
+    <strong>Site under construction – check back soon.</strong>
+
+    <div class="social">
+      <a href="https://github.com/sinergaoptima" target="_blank" rel="noopener" class="btn">
+        <ion-icon name="logo-github"></ion-icon> GitHub
+      </a>
+      <a href="mailto:hello@sinerga-optima.org" class="btn">
+        <ion-icon name="mail"></ion-icon> Contact
+      </a>
+    </div>
   </div>
-</body>
-</html>
+</section>
+
+<!--  scoped styles so we don’t break the rest of the site -->
+<style>
+#hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:linear-gradient(135deg,var(--dark) 60%,var(--teal) 190%);
+  padding:2rem 0;
+}
+.hero-content{
+  max-width:640px;
+}
+.hero-icon{
+  font-size:4rem;
+  color:var(--amber);
+  margin-bottom:1rem;
+}
+#hero h1{margin-bottom:1rem;font-size:clamp(2.5rem,5vw,3.5rem)}
+#hero p{margin-bottom:1.5rem;font-size:1.2rem;opacity:.9}
+#hero strong{display:block;margin-bottom:2rem;font-size:1.1rem}
+#hero .social{display:flex;gap:1rem;justify-content:center}
+</style>
