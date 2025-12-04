@@ -74,7 +74,23 @@
       <!-- 21  -->
       <li id="art-21"><strong>People’s Congress</strong> – Unicameral, 5-year terms, 600 deputies elected by open-list proportional representation with gender zipper.</li>
       <!-- 22  -->
-      <li id="art-22"><strong>Digital Sortition Chamber</strong> – Each year 0.5 % of adult citizens are randomly selected for a 6-month paid term. The Chamber may suspend for 90 days any law violating ecological, secular or equality clauses.</li>
+      <li id="art-22" class="expandable-article">
+        <strong class="article-title" onclick="toggleArticle(22)">Digital Sortition Chamber</strong>
+        <article id="art-22-content" class="article-content" style="display:none;">
+          <h1>Digital Sortition Chamber</h1>
+          <ol>
+            <li><strong>Function</strong> – suspensive veto on eco-secular-solidarity clauses; appointment lock on central-bank board, Scientific Panel, National Investment Bank, Supreme Court; 90-day veto on any bill weakening Articles 1–5, 11, 16, 20, 29.</li>
+            <li><strong>Size</strong> – 300 citizens, 18-month paid term, median-wage salary + childcare + transport.</li>
+            <li><strong>Qualification</strong> – ≥ 18 years, no felony, basic digital literacy test (open-book), resident ≥ 12 months.</li>
+            <li><strong>Selection</strong> – stratified random lottery (gender, age decile, region, income decile) using public algorithm (SHA-256 seed published ≥ 72 h before draw).</li>
+            <li><strong>Rotation</strong> – 50 new members every 6 months (staggered); no person may serve > 18 months in any 10-year period.</li>
+            <li><strong>Powers</strong> – 90-day suspensive veto; appointment veto; constitutional lock (permanent ban on weakening locked articles).</li>
+            <li><strong>Locks</strong> – cannot initiate bills; cannot be dissolved; cannot be lobbied (any gift > USD 50 = felony).</li>
+            <li><strong>Removal</strong> – Sortition Chamber + 60 % referendum (any time).</li>
+            <li><strong>Open-Audit Rule</strong> – raw video + CSV of draw published ≤ 24 h; SHA-256 hash of seed must match public hash; mismatch = draw void, re-run within 7 days.</li>
+          </ol>
+        </article>
+      </li>
       <!-- 23  -->
       <li id="art-23"><strong>Local Commune Sovereignty</strong> – Cities divide into block-communes (≈ 15 000 residents) that control zoning, pre-schools, primary clinics and 40 % of locally generated tax.</li>
       <!-- 24  -->
@@ -132,6 +148,25 @@
 .charter-list li{counter-increment:item;margin:1.2rem 0;padding-left:3rem;position:relative}
 .charter-list li::before{content:counter(item);position:absolute;left:0;top:.2rem;background:var(--amber);color:var(--dark);width:2rem;height:2rem;border-radius:50%;display:grid;place-items:center;font-weight:600}
 .cta{margin-top:3rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+/* Expandable article styling */
+.expandable-article .article-title{cursor:pointer;user-select:none}
+.expandable-article .article-title:hover{text-decoration:underline}
+.expandable-article .article-content{margin-top:1rem;margin-left:3rem;padding:1.5rem;background:rgba(255,255,255,.05);border-left:2px solid var(--amber);border-radius:4px}
+.expandable-article .article-content h1{font-size:1.5rem;margin-bottom:1rem;color:var(--amber)}
+.expandable-article .article-content ol{list-style:decimal;margin-left:1.5rem;padding-left:1rem}
+.expandable-article .article-content ol li{margin:0.8rem 0;padding-left:0.5rem}
 </style>
+
+<script>
+function toggleArticle(articleNum) {
+  const content = document.getElementById('art-' + articleNum + '-content');
+  if (content.style.display === 'none') {
+    content.style.display = 'block';
+  } else {
+    content.style.display = 'none';
+  }
+}
+</script>
 </body>
 </html>
