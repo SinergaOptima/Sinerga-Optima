@@ -24,15 +24,6 @@
     .btn{display:inline-block;padding:.6rem 1.2rem;border:1px solid var(--amber);border-radius:var(--radius);transition:.2s;background:transparent;color:var(--amber)}
     .btn:hover{background:var(--amber);color:var(--dark);text-decoration:none}
 
-    /* Gate */
-    #gateOverlay{position:fixed;inset:0;background:var(--dark);z-index:9999;display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem}
-    .gate-box{max-width:420px;width:100%}
-    .gate-box h2{margin-bottom:1rem;font-size:1.5rem}
-    .gate-box p{margin-bottom:1.5rem;opacity:.9}
-    #passInput{width:100%;padding:.75rem;border-radius:var(--radius);border:1px solid var(--amber);background:transparent;color:#fff;margin-bottom:1rem}
-    #passInput::placeholder{color:rgba(255,255,255,.6)}
-    .gate-box .btn{width:100%}
-
     /* Nav */
     nav{display:flex;justify-content:space-between;align-items:center;height:var(--nav-height);padding:0 5%;background:var(--dark);border-bottom:1px solid rgba(255,181,0,.2);position:sticky;top:0;z-index:10}
     nav span{display:flex;gap:1rem;align-items:center}
@@ -51,19 +42,7 @@
 </head>
 
 <body>
-<!--  GATE  -->
-<div id="gateOverlay">
-  <div class="gate-box">
-    <ion-icon name="construct-outline" style="font-size:3rem;color:#FFB500"></ion-icon>
-    <h2>We’re building the foundations</h2>
-    <p>Enter the password to continue. (Public launch soon.)</p>
-    <input id="passInput" type="password" placeholder="Password" autocomplete="off">
-    <button id="unlockBtn" class="btn">Enter Site</button>
-  </div>
-</div>
-
 <!--  MAIN SITE  -->
-<div id="mainSite" style="display:none">
 <nav>
   <a href="/" class="logo">Sinerga-Optima</a>
   <span>
@@ -98,20 +77,8 @@
   <footer>
     <p>Built with HTML & CSS • <a href="https://github.com/sinergaoptima" target="_blank" rel="noopener">Source</a></p>
   </footer>
-</div>
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script src="/assets/js/main.js"></script>
-
-<!-- Button-Only Unlock -->
-<script>
-  document.getElementById('unlockBtn').onclick = () => {
-    if (document.getElementById('passInput').value.trim() === 'build2025') {
-      document.getElementById('gateOverlay').style.display = 'none';
-      document.getElementById('mainSite').style.display = 'block';
-    }
-  };
-  document.getElementById('passInput').focus();
-</script>
 </body>
 </html>
